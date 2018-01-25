@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-    <script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
-    <script src="liquidFillGauge.js" language="JavaScript"></script>
-    <style>
-        .liquidFillGaugeText { font-family: Helvetica; font-weight: bold; }
-    </style>
-</head>
-<body>
+<style>
+.liquidFillGaugeText { font-family: Helvetica; font-weight: bold; }
+</style>
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script src="//cdn.rawgit.com/gyromaker/d3-liquid-fill-gauge/9e4fbda6/liquidFillGauge.js"></script>
+
 <svg id="fillgauge1" width="97%" height="250" onclick="gauge1.update(NewValue());"></svg>
 <svg id="fillgauge2" width="19%" height="200" onclick="gauge2.update(NewValue());"></svg>
 <svg id="fillgauge3" width="19%" height="200" onclick="gauge3.update(NewValue());"></svg>
 <svg id="fillgauge4" width="19%" height="200" onclick="gauge4.update(NewValue());"></svg>
 <svg id="fillgauge5" width="19%" height="200" onclick="gauge5.update(NewValue());"></svg>
-<svg id="fillgauge6" width="19%" height="200" onclick="gauge6.update(NewValue());"></svg>
-<script language="JavaScript">
+<script>
     var gauge1 = loadLiquidFillGauge("fillgauge1", 55);
     var config1 = liquidFillGaugeDefaultSettings();
     config1.circleColor = "#FF7777";
@@ -80,14 +73,4 @@
     config5.minValue = 30;
     config5.maxValue = 150
     config5.displayPercent = false;
-    var gauge6 = loadLiquidFillGauge("fillgauge6", 120, config5);
-    function NewValue(){
-        if(Math.random() > .5){
-            return Math.round(Math.random()*100);
-        } else {
-            return (Math.random()*100).toFixed(1);
-        }
-    }
 </script>
-</body>
-</html>
